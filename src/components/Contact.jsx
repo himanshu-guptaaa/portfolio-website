@@ -1,18 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-
-  <section id="projects" className="py-20 bg-black text-gray-800">
-    <div className="container mx-auto text-center">
-      <h2 className="text-6xl font-bold mb-8 text-blue-200 italic">Interest</h2>
-      <div className="grid grid-cols-3 gap-4">
-        <div className="p-4 bg-white border">Communication</div>
-        <div className="p-4 bg-white border">Startup</div>
-        <div className="p-4 bg-white border">Exploring</div>
-      </div>
-    </div>
-  </section>
+const phrases = [
+  "Have A Coffee",
+  "Collaborate",
+  "Lunch",
+  "Work Together"
+];
 
 const Contact = () => {
+  const [currentPhrase, setCurrentPhrase] = useState(0);
   const [copySuccess, setCopySuccess] = useState('');
 
   const handleCopyEmail = () => {
@@ -20,7 +16,7 @@ const Contact = () => {
     navigator.clipboard.writeText(email)
       .then(() => {
         setCopySuccess('Email copied to clipboard!');
-        setTimeout(() => setCopySuccess(''), 2000); // Clears the success message after 2 seconds
+        setTimeout(() => setCopySuccess(''), 2000);
       })
       .catch(err => {
         console.error('Failed to copy email: ', err);
@@ -28,20 +24,35 @@ const Contact = () => {
       });
   };
 
+  useEffect(() => {
+    // Function to rotate phrases every 3 seconds
+    const phraseInterval = setInterval(() => {
+      setCurrentPhrase((prev) => (prev + 1) % phrases.length);
+    }, 2000); // Change phrase every 3 seconds
+
+    return () => clearInterval(phraseInterval); // Cleanup interval on component unmount
+  }, []);
+
   return (
-    <section id="contact" className="py-20 bg-black text-blue-100">
+    <section id="contact" className="relative py-20 bg-black text-white overflow-hidden">
       <div className="container mx-auto text-center">
-        <h2 className="text-6xl font-bold mb-8 text-blue-200 italic">Contact Me</h2>
+
+        {/* Rotating text phrases */}
+        <h2 className="text-6xl font-bold mb-8 italic fade-in">
+          Let's {phrases[currentPhrase]}
+        </h2>
+        
         <p className="text-xl">
-          You can reach me via email
-          <br /> {/* Line break added here */}
+          You can reach me via email at <br />
           <span 
             onClick={handleCopyEmail} 
-            className="text-blue-200 underline cursor-pointer focus:outline-none">
-             himanshugupta00072@gmail.com
+            className="underline cursor-pointer text-white">
+            himanshugupta00072@gmail.com
           </span>
         </p>
-        {copySuccess && <p className="text-blue-200 mt-2">{copySuccess}</p>}
+
+        {copySuccess && <p className="mt-2 text-green-500">{copySuccess}</p>}
+
       </div>
     </section>
   );
