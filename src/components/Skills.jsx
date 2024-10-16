@@ -18,7 +18,7 @@ const Skills = () => {
       
       {/* Background Video */}
       <video
-        src="/public/redsmoke.mp4" // Ensure the correct path to your video file
+        src="/redsmoke.mp4" // Use correct path without '/public'
         className="absolute top-0 left-0 w-full h-full object-cover"
         autoPlay
         loop
