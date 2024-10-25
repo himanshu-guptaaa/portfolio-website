@@ -13,7 +13,7 @@ const Navbar = () => {
     <nav className="bg-black p-4">
       {/* Button for mobile menu toggle */}
       <div className="flex justify-between items-center">
-        <h1 className="text-white text-lg">MyWebsite</h1>
+        <h1 className="text-white text-lg">.</h1>
         <button 
           onClick={toggleMenu} 
           className="text-white sm:hidden focus:outline-none"
