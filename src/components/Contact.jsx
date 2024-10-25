@@ -5,7 +5,7 @@ import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 const phrases = [
   "Have A Coffee",
   "Collaborate",
-  "Lunch",
+  "have Lunch",
   "Work Together"
 ];
 
