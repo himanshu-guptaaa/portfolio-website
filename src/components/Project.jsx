@@ -8,32 +8,32 @@ const projects = [
     url: 'https://icfai-event.vercel.app/', // Replace with actual URL
   },
   {
-    title: '',
-    description: 'A minimalistic 1SecMail clien.',
-    category: 'Web Development',
+    title: 'Recomanded system',
+    description: 'movie Recomanded system',
+    category: 'machine learning',
     url: 'https://example.com/hidden-mail', // Replace with actual URL
   },
   {
-    title: 'PHC Formatter',
-    description: 'PHC Formatter serializes and deserializes PHC strings.',
-    category: 'Utilities',
+    title: 'NGO Website ',
+    description: 'Complete Responsive NGO website ',
+    category: 'full stack',
     url: 'https://example.com/phc-formatter', // Replace with actual URL
   },
   {
-    title: 'Blank',
-    description: 'Simple Unsplash client.',
-    category: 'Web Development',
+    title: 'Scanner App',
+    description: 'Scanner App using python that make the QR code of picure , video, url etc.',
+    category: 'python dev',
     url: 'https://example.com/blank', // Replace with actual URL
   },
   {
-    title: 'XScale',
-    description: 'XScale Agency website.',
-    category: 'Web Development',
+    title: 'Backend devploment',
+    description: 'backend devploment using Django',
+    category: 'python Development',
     url: 'https://example.com/xscale', // Replace with actual URL
   },
   {
-    title: 'WEB3 Images',
-    description: 'A simple API to upload and resize images using web3.storage and sharp.',
+    title: 'CRUD operation',
+    description: 'CRUD operation using Node.js',
     category: 'Backend Development',
     url: 'https://example.com/web3-images', // Replace with actual URL
   },
